@@ -1,11 +1,11 @@
 
-# Module 4 -  Final Project Specifications
+# Module 4 - Final Project Specifications
 
 ## Introduction
 
-In this lesson, we'll review all the guidelines and specifications for the final project for Module 4.
+In this README, we'll review all the guidelines and specifications for the final project for Module 4.
 
-## Objectives
+### Objectives
 
 * Understand all required aspects of the Final Project for Module 4
 * Understand all required deliverables
@@ -13,54 +13,44 @@ In this lesson, we'll review all the guidelines and specifications for the final
 
 ### Final Project Summary
 
-Another module down--you're absolutely crushing it! For this project, you'll get to flex your **_Time-Series_** muscles!
+Another module down--you're absolutely crushing it! You've made it all the way through one of the toughest modules of this course. You must have an amazing brain in your head!
 
-<img src='https://raw.githubusercontent.com/learn-co-curriculum/dsc-mod-4-project/master/images/timegif.gif'>
+<img src='https://raw.githubusercontent.com/learn-co-students/dsc-mod-4-project-seattle-ds-102819/master/images/brain.gif'>
 
-For this module's final project, we're going to put your newfound **_Time Series Analysis_** skills to the test. You will be forecasting real estate prices of various zipcodes using data from [Zillow](https://www.zillow.com/research/data/). However, this won't be as straightforward as just running a time-series analysis--you're going to have to make some data-driven decisions and think critically along the way!
+### Project Logistics
 
-### The Project
+For this module's final project, you have the choice of three different types of problems: **time series analysis**, **recommendation systems**, or **image classification with deep learning**.  When choosing a problem, consider:
+
+1. **Portfolio Depth:** One option is to choose the same type of problem you plan to tackle in Module 5 (capstone).  This will allow you to practice the necessary skills in a group setting, before diving into your individual project.  You will likely produce a capstone project that is more polished and sophisticated, but your portfolio will demonstrate less breadth.
+2. **Portfolio Breadth:** Another option is to choose a type of problem that interests you, but that you don't plan to use in your capstone project.  Each of your individual projects will end up less polished and sophisticated, but you will end up with a portfolio that demonstrates a wider range of skills.
+
+For each problem, we have provided a dataset.  You are highly encouraged to use the provided dataset, but you may use an alternative dataset of your own choosing, pending instructor approval.
+
+# PROJECT DESCRIPTIONS
+
+## Problem 1: Time Series Analysis
+
+### Problem Domain + Data
+
+If you choose the Time Series option, you will be forecasting real estate prices of various zip codes using data from [Zillow](https://www.zillow.com/research/data/). However, this won't be as straightforward as just running a time-series analysis--you're going to have to make some data-driven decisions and think critically along the way!
 
 For this project, you will be acting as a consultant for a fictional real-estate investment firm. The firm has asked you what seems like a simple question:
 
-> what are the top 5 best zipcodes for us to invest in?
+> what are the top 5 best zip codes for us to invest in?
 
 This may seem like a simple question at first glance, but there's more than a little ambiguity here that you'll have to think through in order to provide a solid recommendation. Should your recommendation be focused on profit margins only? What about risk? What sort of time horizon are you predicting against?  Your recommendation will need to detail your rationale and answer any sort of lingering questions like these in order to demonstrate how you define "best".
 
-As mentioned previously, the data you'll be working with comes from the [Zillow Research Page](https://www.zillow.com/research/data/). However, there are many options on that page, and making sure you have exactly what you need can be a bit confusing. For simplicity's sake, we have already provided the dataset for you in this repo--you will find it in the file `zillow_data.csv`.
-
-## The Deliverables
+As mentioned previously, the data you'll be working with comes from the [Zillow Research Page](https://www.zillow.com/research/data/). However, there are many options on that page, and making sure you have exactly what you need can be a bit confusing. For simplicity's sake, we have already provided the dataset for you in this repo--you will find it in the file `time-series/zillow_data.csv`.
 
 The goal of this project is to have you complete a very common real-world task in regard to Time-Series Modeling. However, real world problems often come with a significant degree of ambiguity, which requires you to use your knowledge of statistics and data science to think critically about and answer. While the main task in this project is Time-Series Modeling, that isn't the overall goal--it is important to understand that Time-Series Modeling is a tool in your toolbox, and the forecasts it provides you are what you'll use to answer important questions.
 
 In short, to pass this project, demonstrating the quality and thoughtfulness of your overall recommendation is at least as important as successfully building a Time-Series model!
 
-Online students should complete the following 4 deliverables for this project:
+### Starter Jupyter Notebook
 
-* A well-documented **_Jupyter Notebook_** containing any code you've written for this project (use the notebook in this repo, `mod_4_starter_notebook.ipynb`). This work will need to be pushed to your GitHub repository in order to submit your project.
-* An organized **README.md** file in the GitHub repository that describes the contents of the repository. This file should be the source of information for navigating through the repository.
-* A **_[Blog post](https://github.com/learn-co-curriculum/dsc-welcome-blogging)_**.
-* An **_'Executive Summary' PowerPoint Presentation_** that explains your rationale and methodology for determining the best zipcodes for investment.
+For this project, you will be provided with a Jupyter notebook, `time-series/starter_notebook.ipynb`, containing some starter code. If you inspect the Zillow dataset file, you'll notice that the datetimes for each sale are the actual column names--this is a format you probably haven't seen before. To ensure that you're not blocked by preprocessing, we've provided some helper functions to help simplify getting the data into the correct format. You're not required to use this notebook or keep it in its current format, but we strongly recommend you consider making use of the helper functions so you can spend your time working on the parts of the project that matter.
 
-Note: On-campus students may have different deliverables, please speak with your instructor.
-
-### Jupyter Notebook Must-Haves
-
-For this project, you will be provided with a jupyter notebook containing some starter code. If you inspect the zillow dataset file, you'll notice that the datetimes for each sale are the actual column names--this is a format you probably haven't seen before. To ensure that you're not blocked by preprocessing, we've provided some helper functions to help simplify getting the data into the correct format. You're not required to use this notebook or keep it in its current format, but we strongly recommend you consider making use of the helper functions so you can spend your time working on the parts of the project that matter.
-
-#### Organization/Code Cleanliness
-
-The notebook should be well organized, easy to follow, and code is modularized and commented where appropriate.
-
-* Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.
-* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.
-* Data visualizations you create should be clearly labeled and contextualized--that is, they fit with the surrounding code or problems you're trying to solve. No dropping data visualizations randomly around your notebook without any context!
-
-#### Findings
-
-Your notebook should briefly mention the metrics you have defined as "best", so that any readers understand what technical metrics you are trying to optimize for (for instance, risk vs profitability, ROI yield, etc.). You do **not** need to explain or defend your your choices in the notebook--the blog post and executive summary presentation are both better suited to that sort of content. However, the notebook should provide enough context about your definition for "best investment" so that they understand what the code you are writing is trying to solve.
-
-#### Visualizations
+### Visualizations
 
 Time-Series Analysis is an area of data science that lends itself well to intuitive data visualizations. Whereas we may not be able to visualize the best choice in a classification or clustering problem with a high-dimensional dataset, that isn't an issue with Time Series data. As such, **_any findings worth mentioning in this problem are probably also worth visualizing_**. Your notebook should make use of data visualizations as appropriate to make your findings obvious to any readers.
 
@@ -76,25 +66,141 @@ Also, remember that if a visualization is worth creating, then it's also worth t
 <center><img src='images/bad-graph-1.png' height=100% width=100%>
 There's just too much going on in this graph for it to be readable--don't make the same mistake! (<a href='http://genywealth.com/wp-content/uploads/2010/03/line-graph.php_.png'>Source</a>)</center>
 
-### Blog Post Must-Haves
+### Evaluation
 
-Refer back to the [Blogging Guidelines](https://github.com/learn-co-curriculum/dsc-welcome-blogging) for the technical requirements and blog ideas.
+In addition to deciding which quantitative metric(s) you want to target (e.g. minimizing mean squared error), you need to start with a definition of "best investment".  Consider additional metrics like risk vs. profitability, or ROI yield.
 
+## Problem 2: Recommendation System
 
-### Executive Summary Must-Haves
+### Problem Domain + Data
 
-Your presentation should:
+If you choose the Recommendation System option, you will be making movie recommendations based on the [MovieLens](https://grouplens.org/datasets/movielens/latest/) dataset from the GroupLens research lab at the University of Minnesota.  Unless you are planning to run your analysis on a paid cloud platform, we recommend that you use the "small" dataset containing 100,000 user ratings (and potentially, only a particular subset of that dataset).
 
-Contain between 5-10 professional quality slides detailing:
+The task we would like you to complete is:
 
-* A high-level overview of your methodology and findings, including the 5 zipcodes you recommend investing in
-* A brief explanation of what metrics you defined as "best" in order complete this project
+> build a model that provides top 5 movie recommendations to a user, based on their ratings of other movies
 
-As always, this prresentation should also:
+The MovieLens dataset is a "classic" recommendation system dataset, that is used in numerous academic papers and machine learning proofs-of-concept.  You will need to create the specific details about how the user will provide their ratings of other movies, in addition to formulating a more specific business problem within the general context of "recommending movies".
 
-* Take no more than 5 minutes to present
-* Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
+### Content-Based Filtering and Collaborative Filtering
 
-## Grading Rubric 
+At minimum, your recommendation system must use content-based filtering _or_ collaborative filtering.  Consider your choice of framing to determine which of these is the best fit.  If you have time, consider implementing a hybrid approach, e.g. using collaborative filtering as the primary mechanism, but using content-based filtering to address the [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(computing)).
 
-Online students can find a PDF of the grading rubric for the project [here](https://github.com/learn-co-curriculum/dsc-mod-4-project/blob/master/module4_project_rubric.pdf). _Note: On-campus students may have different requirements, please speak with your instructor._
+## Problem 3: Image Classification with Deep Learning
+
+### Problem Domain + Data
+
+If you choose this option, you'll put everything you've learned together to build a Deep Neural Network that trains on a large dataset for classification on a non-trivial task.  In this case, using x-ray images of pediatric patients to identify whether or not they have pneumonia.  The dataset comes from Kermany et al. on [Mendeley](https://data.mendeley.com/datasets/rscbjbr9sj/3) although there is also a version on [Kaggle](https://www.kaggle.com/paultimothymooney/chest-xray-pneumonia) that may be easier to use.
+
+The task we would like you to complete is:
+
+> build a model that can classify whether a given patient has pneumonia, given a chest x-ray image
+
+### Aim for a Proof of Concept
+
+With Deep Learning, data is king--the more of it, the better. However, the goal of this project isn't to build the best model possible--it's to demonstrate your understanding by building a model that works. The true goal of this project is to gain experience with Deep Learning and to build a portfolio project you can be proud of, and that doesn't necessarily require a model with incredibly high accuracy. You should try to avoid datasets and model architectures that won't run in reasonable time on your own machine. For many problems, this means downsampling your dataset and only training on a portion of it. Once you're absolutely sure that you've found the best possible architecture and other hyperparameters for your model, then consider training your model on your entire dataset overnight (or, as larger portion of the dataset that will still run in a feasible amount of time).
+
+At the end of the day, we want to see your thought process as you iterate and improve on a model. A project that achieves a lower level of accuracy but has clearly iterated on the model and the problem until it found the best possible approach is more impressive than a model with high accuracy that did no iteration. We're not just interested in seeing you finish a model--we want to see that you understand them, and can use this knowledge to try and make them better and better!
+
+# DELIVERABLES
+
+The following should be fairly familiar by now, but as a reminder:
+
+1. A public GitHub repository
+2. An `environment.yml` file that contains all the necessary packages needed to recreate your conda environment
+3. A standalone `src/` directory that stores all relevant source code.
+    - All functions have docstrings that act as [professional-quality documentation](http://google.github.io/styleguide/pyguide.html#381-docstrings). 
+    - If applicable, [well documented](https://www.sqlstyle.guide/) SQL queries with appropriate single-line or multiline comments.
+    - Quality time series, recommendation, or image classification model
+4. A standalone `data/` directory that stores all relevant raw and processed data files
+    - Be sure to include how the data was obtained! Include either a README with specific step-by-step instructions on how to collect the data, or a Python or Bash script that will automatically collect the data on the user's behalf
+    - All large files are labeled in the `.gitignore` file to avoid having them accidentally live in your commit history
+5. A standalone `references/` directory that stores all relevant literature, data dictionaries, or useful references that were used to help you during the project.
+    - Use this directory to store physical copies of the `.pdf` files; or
+    - Create a `README.md` file that cites external resources that were used.
+6. A standalone `reports/` directory that stores your `memo.md` and `presentation.pdf` files
+7. A user-focused `README.md` file that explains your process, methodology and findings.
+    - Take the time to make sure that you craft your story well, and clearly explain your process and findings in a way that clearly shows both your technical expertise and your ability to communicate your results!
+8. A `notebooks/` directory containing both EDA and presentation notebooks, with a README explaining their contents
+    - The very beginning of the notebook contains a description of the purpose of the notebook.
+       - This is helpful for your future self and anyone of your colleagues that needs to view your notebook. Without this context, you’re implicitly asking your peers to invest a lot of energy to help solve your problem. Help them by enabling them to jump into your project by providing them the purpose of this Jupyter Notebook.
+    - Explanation of the data sources and where one can retrieve them
+       - Whenever possible, link to the corresponding data dictionary
+    - Custom functions and classes are imported from Python modules and are not created directly in the notebook.
+    - At least 4 meaningful data visualizations, with corresponding interpretations. All visualizations are well labeled with axes labels, a title, and a legend (when appropriate)
+9. A one-page memo written exclusively for a non-technical stakeholder with a file name `memo.md`.
+    - This memo should describe:
+       - A summary of the business problem you are trying to solve
+       - Key takeaways from your solution
+       - A section on next steps if you had more time (i.e. one additional week)
+10. An "Executive Summary" Keynote/PowerPoint/Google Slide presentation (delivered as a PDF export) that explains what you have found.
+    - Make sure to also add and commit this file as presentation.pdf of your non-technical presentation to your repository with a file name of `presentation.pdf`.
+    - Contain between 5-10 professional quality slides detailing:
+       - A high-level overview of your methodology
+       - The results you’ve uncovered
+       - Any real-world recommendations you would like to make based on your findings (ask yourself--why should the executive team care about what you found? How can your findings help the company/stakeholder?)
+       - Avoid technical jargon and explain results in a clear, actionable way for non-technical audiences.
+    - The slides should use visualizations whenever possible, and avoid walls of text
+
+**_Organization/Code Cleanliness_**
+
+* The notebooks should be well organized, easy to follow, and code is commented where appropriate.  
+    * Level Up: The notebook contains well-formatted, professional looking markdown cells explaining any substantial code. All functions have docstrings that act as professional-quality documentation.  
+* The notebook is written to technical audiences with a way to both understand your approach and reproduce your results. The target audience for this deliverable is other data scientists looking to validate your findings.  
+
+**_Process, Methodology, and Findings_**
+
+* Your notebooks should contain a clear record of your process and methodology for exploring and preprocessing your data, building and tuning a model, and interpreting your results.
+* We recommend you use the CRISP-DM process to help organize your thoughts and stay on track (see below for a refresher).
+
+# THE PROCESS
+
+These steps are informed by Smart Vision's<sup>1</sup> description of the CRISP-DM process.
+
+### 1. Business Understanding
+
+Start by reading this document, and making sure that you understand the kinds of questions being asked.  In order to narrow your focus, you will likely want to make some design choices about your specific audience, rather than attempting to address all potentially-relevant concerns. Think about what kinds of predictions you want to be able to make, and about which kinds of wrong predictions are most concerning.
+
+Three things to be sure you establish during this phase are:
+
+1. **Objectives:** what questions are you trying to answer, and for whom?
+2. **Project plan:** you may want to establish more formal project management practices, such as daily stand-ups or using a Trello board, to plan the time you have remaining.  Regardless you should determine the division of labor, communication expectations, and timeline.
+3. **Success criteria:** what does a successful project look like?  How will you know when you have achieved it?  At this point you should be able to establish at least one quantitative success metric, before you even decide on which model(s) you are going to try.
+
+### 2. Data Understanding
+
+Write a script to download the data (or instructions for future users on how to manually download it), and explore it.  Do you understand what the columns mean?  If the dataset has more than one table, how do they relate to each other?  How will you select the subset of relevant data?  What kind of data cleaning is required?
+
+It may be useful to generate visualizations of the data during this phase.
+
+### 3. Data Preparation
+
+Through SQL and Pandas, perform any necessary data cleaning and develop a query that pulls in all relevant data for modeling, including any merging of tables.  Be sure to document any data that you choose to drop or otherwise exclude.  This is also the phase to consider any feature scaling or one-hot encoding required to feed the data into your particular model.
+
+### 4. Modeling
+
+Similar to the Mod 3 project, the focus is on prediction. Good prediction is a matter of the model generalizing well. Steps we can take to assure good generalization include: testing the model on unseen data, cross-validation, and regularization. What sort of model should you build?
+
+Here you will also likely encounter problems with computational capacity.  Figure out how to use smaller samples of your data in order to tweak hyperparameters.  Investigate cloud tools with hardware acceleration (e.g. Google Colab is a free one) in order to run your analysis with larger sets of data and more versions of the model.
+
+### 5. Evaluation
+
+Recall that there are many different metrics we might use for evaluating a classification model. Accuracy is intuitive, but can be misleading, especially if you have class imbalances in your target. Perhaps, depending on you're defining things, it is more important to minimize false positives, or false negatives. It might therefore be more appropriate to focus on precision or recall. You might also calculate the AUC-ROC to measure your model's *discrimination*.
+
+### 6. Deployment
+
+In this case, your "deployment" comes in the form of the deliverables listed above. Make sure you can answer the following questions about your process:
+
+ - "How did you pick the question(s) that you did?"
+ - "Why are these questions important from a business perspective?"
+ - "How did you decide on the data cleaning options you performed?"
+ - "Why did you choose a given method or library?"
+ - "Why did you select these visualizations and what did you learn from each of them?"
+ - "Why did you pick those features as predictors?"
+ - "How would you interpret the results?"
+ - "How confident are you in the predictive quality of the results?"
+ - "What are some of the things that could cause the results to be wrong?"
+
+## Citation
+
+1. "What is the CRISP-DM Methodology?" Smart Vision Europe. Available at: https://www.sv-europe.com/crisp-dm-methodology/
