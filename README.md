@@ -19,14 +19,16 @@ Another module down--you're absolutely crushing it! You've made it all the way t
 
 ### Project Logistics
 
-For this module's final project, you have the choice of three different types of problems: **time series analysis**, **recommendation systems**, or **image classification with deep learning**.  When choosing a problem, consider:
+For this module's final project, you have the choice of three different types of problems: **time series analysis**, **recommendation systems**, or **image classification with deep learning**.  Like Project \#3, the focus here is on *prediction*.  It will be up to you to determine how best to evaluate your model, but for any of these projects you should imagine that your goal is to build something that **works**.  If you invest in poorly chosen ZIP codes, this will hurt the business.  If you make poor movie recommendations, people will stop trusting your judgments.  And the seriousness of the consequences of mis-classifying pneumonic or non-pneumonic lungs goes without saying!
+
+When choosing a problem, consider:
 
 1. **Portfolio Depth:** One option is to choose the same type of problem you plan to tackle in Module 5 (capstone).  This will allow you to practice the necessary skills in a group setting, before diving into your individual project.  You will likely produce a capstone project that is more polished and sophisticated, but your portfolio will demonstrate less breadth.
 2. **Portfolio Breadth:** Another option is to choose a type of problem that interests you, but that you don't plan to use in your capstone project.  Each of your individual projects will end up less polished and sophisticated, but you will end up with a portfolio that demonstrates a wider range of skills.
 
 For each problem, we have provided a dataset.  You are highly encouraged to use the provided dataset, but you may use an alternative dataset of your own choosing, pending instructor approval.
 
-# PROJECT DESCRIPTIONS
+## PROJECT DESCRIPTIONS
 
 ## Problem 1: Time Series Analysis
 
@@ -50,22 +52,6 @@ In short, to pass this project, demonstrating the quality and thoughtfulness of 
 
 For this project, you will be provided with a Jupyter notebook, `time-series/starter_notebook.ipynb`, containing some starter code. If you inspect the Zillow dataset file, you'll notice that the datetimes for each sale are the actual column names--this is a format you probably haven't seen before. To ensure that you're not blocked by preprocessing, we've provided some helper functions to help simplify getting the data into the correct format. You're not required to use this notebook or keep it in its current format, but we strongly recommend you consider making use of the helper functions so you can spend your time working on the parts of the project that matter.
 
-### Visualizations
-
-Time-Series Analysis is an area of data science that lends itself well to intuitive data visualizations. Whereas we may not be able to visualize the best choice in a classification or clustering problem with a high-dimensional dataset, that isn't an issue with Time Series data. As such, **_any findings worth mentioning in this problem are probably also worth visualizing_**. Your notebook should make use of data visualizations as appropriate to make your findings obvious to any readers.
-
-Also, remember that if a visualization is worth creating, then it's also worth taking the extra few minutes to make sure that it is easily understandable and well-formatted. When creating visualizations, make sure that they have:
-
-* A title
-* Clearly labeled X and Y axes, with appropriate scale for each
-* A legend, when necessary
-* No overlapping text that makes it hard to read
-* An intelligent use of color--multiple lines should have different colors and/or symbols to make them easily differentiable to the eye
-* An appropriate amount of information--avoid creating graphs that are "too busy"--for instance, don't create a line graph with 25 different lines on it
-
-<center><img src='images/bad-graph-1.png' height=100% width=100%>
-There's just too much going on in this graph for it to be readable--don't make the same mistake! (<a href='http://genywealth.com/wp-content/uploads/2010/03/line-graph.php_.png'>Source</a>)</center>
-
 ### Evaluation
 
 In addition to deciding which quantitative metric(s) you want to target (e.g. minimizing mean squared error), you need to start with a definition of "best investment".  Consider additional metrics like risk vs. profitability, or ROI yield.
@@ -82,9 +68,13 @@ The task we would like you to complete is:
 
 The MovieLens dataset is a "classic" recommendation system dataset, that is used in numerous academic papers and machine learning proofs-of-concept.  You will need to create the specific details about how the user will provide their ratings of other movies, in addition to formulating a more specific business problem within the general context of "recommending movies".
 
-### Content-Based Filtering and Collaborative Filtering
+### Collaborative Filtering
 
-At minimum, your recommendation system must use content-based filtering _or_ collaborative filtering.  Consider your choice of framing to determine which of these is the best fit.  If you have time, consider implementing a hybrid approach, e.g. using collaborative filtering as the primary mechanism, but using content-based filtering to address the [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(computing)).
+At minimum, your recommendation system must use collaborative filtering.  If you have time, consider implementing a hybrid approach, e.g. using collaborative filtering as the primary mechanism, but using content-based filtering to address the [cold start problem](https://en.wikipedia.org/wiki/Cold_start_(computing)).
+
+### Evaluation
+
+The MovieLens dataset has explicit ratings, so achieving some sort of evaluation of your model is simple enough.  But you should give some thought to the question of metrics.  Since the rankings are ordinal, we know we can treat this like a regression problem.  But when it comes to regression metrics there are several choices: RMSE, MAE, etc.  [Here](http://fastml.com/evaluating-recommender-systems/) are some further ideas.
 
 ## Problem 3: Image Classification with Deep Learning
 
@@ -101,6 +91,30 @@ The task we would like you to complete is:
 With Deep Learning, data is king--the more of it, the better. However, the goal of this project isn't to build the best model possible--it's to demonstrate your understanding by building a model that works. The true goal of this project is to gain experience with Deep Learning and to build a portfolio project you can be proud of, and that doesn't necessarily require a model with incredibly high accuracy. You should try to avoid datasets and model architectures that won't run in reasonable time on your own machine. For many problems, this means downsampling your dataset and only training on a portion of it. Once you're absolutely sure that you've found the best possible architecture and other hyperparameters for your model, then consider training your model on your entire dataset overnight (or, as larger portion of the dataset that will still run in a feasible amount of time).
 
 At the end of the day, we want to see your thought process as you iterate and improve on a model. A project that achieves a lower level of accuracy but has clearly iterated on the model and the problem until it found the best possible approach is more impressive than a model with high accuracy that did no iteration. We're not just interested in seeing you finish a model--we want to see that you understand them, and can use this knowledge to try and make them better and better!
+
+### Evaluation
+
+Evaluation is fairly straightforward for this project.  But you'll still need to think about which metric to use and about how best to cross-validate your results.
+
+## Visualizations
+
+As usual, the best way to present findings is often visually, and the tips and reminders below should apply to any of these projects.
+
+But please pay special attention to this section if choosing Project \#1 because time-series analysis is an area of data science that lends itself well to intuitive data visualizations. Whereas we may not be able to visualize the best choice in a classification or clustering problem with a high-dimensional dataset, that isn't an issue with Time Series data. As such, **_any findings worth mentioning in this problem are probably also worth visualizing_**.
+
+Your notebook should make use of data visualizations as appropriate to make your findings obvious to any readers. And, when it comes to moving images out of notebooks, make an effort to *export* them rather than taking screen shots. Note e.g. `matplotlib.pyplot.savefig()`, an in-built exportation tool. See [here](https://medium.com/analytics-vidhya/export-images-from-jupyter-notebook-with-a-single-command-422db2b66e92) for more sophisticated possibilities.
+
+Remember that if a visualization is worth creating, then it's also worth taking the extra few minutes to make sure that it is easily understandable and well-formatted. When creating visualizations, make sure that they have:
+
+* A title
+* Clearly labeled X and Y axes, with appropriate scale for each
+* A legend, when necessary
+* No overlapping text that makes it hard to read
+* An intelligent use of color--multiple lines should have different colors and/or symbols to make them easily differentiable to the eye
+* An appropriate amount of information--avoid creating graphs that are "too busy"--for instance, don't create a line graph with 25 different lines on it
+
+<center><img src='images/bad-graph-1.png' height=100% width=100%>
+There's just too much going on in this graph for it to be readable--don't make the same mistake! (<a href='http://genywealth.com/wp-content/uploads/2010/03/line-graph.php_.png'>Source</a>)</center>
 
 # DELIVERABLES
 
